@@ -17,7 +17,7 @@ app.configure(function(){
 });
 
 app.configure('development', function(){
-  app.use(express.errorHandler());
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 
   var cp = require('child_process');
   //spawn node child process to start grunt build and watch processes
@@ -26,6 +26,10 @@ app.configure('development', function(){
       // relay output to console
       console.log("%s", data);
   });
+});
+
+app.configure('production', function(){
+  app.use(express.errorHandler());
 });
 
 app.get('/', routes.index);
