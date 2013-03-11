@@ -1,0 +1,28 @@
+{
+  "name": "simontaggart-node-test",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "~1.8.3",
+    "backbone": "~0.9.9",
+    "lodash": "~1.0.0-rc.3",
+    "require": "~2.1.2",
+    "requirejs-text": "~2.0.3"
+  },
+  "exportsOverride": {
+    "require": {
+      "js": "require.js"
+    },
+    "requirejs-text": {
+      "js": "text.js"
+    },
+    "backbone" : {
+      "js": "backbone-min.js"
+    },
+    "jquery": {
+      "js": "jquery.min.js"
+    },
+    "lodash": {
+      "js": "lodash.min.js"
+    }
+  }
+}
