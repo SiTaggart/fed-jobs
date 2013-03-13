@@ -22,7 +22,7 @@
       "js": "jquery.min.js"
     },
     "lodash": {
-      "js": "lodash.min.js"
+      "js": "./dist/lodash.min.js"
     }
   }
 }

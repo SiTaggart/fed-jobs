@@ -17,8 +17,8 @@ module.exports = function( grunt ) {
     requirejs: {
       compile: {
         options: {
-          baseUrl: "app/scripts",
-          mainConfigFile: "app/scripts/config.js",
+          baseUrl: "app/assets/scripts",
+          mainConfigFile: "app/assets/scripts/config.js",
           out: "public/scripts/main.js",
           name: "main",
           inlineText: false,
@@ -38,7 +38,7 @@ module.exports = function( grunt ) {
         // http://compass-style.org/help/tutorials/configuration-reference/#configuration-properties
         options: {
           cssDir: 'public/css',
-          sassDir: 'app/styles',
+          sassDir: 'app/assets/styles',
           imagesDir: 'public/images',
           javascriptsDir: 'public/scripts',
           outputStyle: 'expanded',
@@ -73,7 +73,7 @@ module.exports = function( grunt ) {
       },
       files: [
         'Gruntfile.js',
-        'app/scripts/**/*.js'
+        'app/assets/scripts/**/*.js'
       ]
     },
 
@@ -81,13 +81,13 @@ module.exports = function( grunt ) {
     watch: {
       compass: {
         files: [
-          'app/styles/**/*.{scss,sass}'
+          'app/assets/styles/**/*.{scss,sass}'
         ],
         tasks: ['compass']
       },
       jshint: {
         files: [
-          'app/scripts/**/*.js'
+          'app/assets/scripts/**/*.js'
         ],
         tasks: ['jshint', 'requirejs']
       }
@@ -103,7 +103,7 @@ module.exports = function( grunt ) {
         }
       }
     },
-    mincss: {
+    cssmin: {
       compress: {
         files: {
           'public/css/main.css': ['public/css/*.css']
@@ -119,7 +119,7 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
-  grunt.loadNpmTasks('grunt-contrib-mincss');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default grunt task to be run by node when the app starts in dev
@@ -129,6 +129,6 @@ module.exports = function( grunt ) {
   grunt.registerTask('setapp', ['bower']);
 
   //Ready app for production
-  grunt.registerTask('production', ['compass','requirejs', 'uglify', 'mincss']);
+  grunt.registerTask('production', ['compass','requirejs', 'uglify', 'cssmin']);
 
 };

@@ -1,4 +1,5 @@
 var express = require('express'),
+    appConfig = require('./config'),
     routes = require('./app/routes'),
     http = require('http'),
     path = require('path');
@@ -6,7 +7,7 @@ var express = require('express'),
 var app = express();
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', appConfig.port);
   app.set('views', __dirname + '/app/views');
   app.set('view engine', 'jade');
   app.set('view options', { pretty: true });
