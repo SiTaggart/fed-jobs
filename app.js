@@ -2,7 +2,15 @@ var express = require('express'),
     appConfig = require('./config'),
     routes = require('./app/routes'),
     http = require('http'),
-    path = require('path');
+    path = require('path'),
+    mongoose = require('mongoose'),
+    FeedsController = require('./app/controllers/feeds');
+
+// Connect to data
+mongoose.connect(appConfig.mongodb);
+
+var feeds = new FeedsController();
+feeds.start();
 
 var app = express();
 
@@ -34,6 +42,8 @@ app.configure('production', function(){
 });
 
 app.get('/', routes.index);
+//app.get('/api/jobs', routes.getJobs);
+//app.get('/api/jobs/:id', routes.getJob);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

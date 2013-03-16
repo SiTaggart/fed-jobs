@@ -6,7 +6,10 @@
     "jade": "",
     "twit": "~1.1.5",
     "mongoose": "~3.5.8",
-    "feedparser": "~0.13.2"
+    "feedparser": "~0.13.2",
+    "moment": "~2.0.0",
+    "request": "~2.16.2",
+    "lodash": "~1.0.1"
   },
   "devDependencies": {
     "grunt": "~0.4.0",
