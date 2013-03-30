@@ -1,5 +1,6 @@
 var express = require('express'),
     appConfig = require('./config'),
+    cronJob = require('cron').CronJob,
     routes = require('./app/routes'),
     http = require('http'),
     path = require('path'),
@@ -10,7 +11,15 @@ var express = require('express'),
 mongoose.connect(appConfig.mongodb);
 
 var feeds = new FeedsController();
-feeds.start();
+
+var job = new cronJob({
+  cronTime: '2 * * * * *',
+  onTick: function() {
+    console.log('cron job ran');
+    feeds.start();
+  },
+  start: true
+});
 
 var app = express();
 

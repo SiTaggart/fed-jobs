@@ -9,7 +9,9 @@
     "feedparser": "~0.13.2",
     "moment": "~2.0.0",
     "request": "~2.16.2",
-    "lodash": "~1.0.1"
+    "lodash": "~1.0.1",
+    "cron": "~1.0.1",
+    "analytics-node": "~0.3.0"
   },
   "devDependencies": {
     "grunt": "~0.4.0",
