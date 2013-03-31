@@ -1,6 +1,9 @@
 {
-  "name": "af-node-base",
+  "name": "fed-jobs",
   "version": "0.0.1",
+  "scripts": {
+    "start": "node app"
+  },
   "dependencies": {
     "express": "",
     "jade": "",

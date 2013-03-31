@@ -13,7 +13,8 @@ mongoose.connect(appConfig.mongodb);
 var feeds = new FeedsController();
 
 var job = new cronJob({
-  cronTime: '2 * * * * *',
+  // cronTime: ,
+  cronTime: (process.env.NODE_ENV !== 'production') ? '* * * * *' : '0 * * * *',
   onTick: function() {
     console.log('cron job ran');
     feeds.start();
@@ -51,8 +52,8 @@ app.configure('production', function(){
 });
 
 app.get('/', routes.index);
-//app.get('/api/jobs', routes.getJobs);
-//app.get('/api/jobs/:id', routes.getJob);
+app.get('/api/jobs', routes.getJobs);
+app.get('/api/jobs/:feed', routes.getJobsByFeedName);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

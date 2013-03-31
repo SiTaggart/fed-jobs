@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1 Simon Taggart
-  p Hello Simon
+  h1 Front-end Development Jobs
+  ul
+  each job, i in jobs
+    li
+      span.feed #{job.feedName}
+      h2
+        a(href=job.url) #{job.title}
+      | (#{job.createdAt})
+

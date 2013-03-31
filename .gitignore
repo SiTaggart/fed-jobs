@@ -5,3 +5,4 @@ components/
 public/css/*
 public/libs/*
 public/scripts/*
+config_local.js
