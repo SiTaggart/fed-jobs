@@ -83,8 +83,8 @@ function feedJob () {
     var tweetStatus = 'On @' + feedID + ': ' + article.title,
         tweetURL = article.link,
         fullTweet;
-    tweetStatus = tweetStatus.substring(0, 101);
-    fullTweet = tweetStatus + ' ' + encodeURI(tweetURL) + ' #job #frontend';
+    tweetStatus = tweetStatus.substring(0, 115);
+    fullTweet = tweetStatus + ' ' + encodeURI(tweetURL);
 
     T.post('statuses/update', { status: fullTweet }, function(err, reply) {
       if(err) {
