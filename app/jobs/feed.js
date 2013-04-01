@@ -59,7 +59,7 @@ function feedJob () {
       if(!jobExist) {
         createNewJob(article, tempFeedID, tempFeedName);
         // only tweet in production
-        if(process.env.NODE_ENV === 'production') tweetNewJob(article);
+        if(process.env.NODE_ENV === 'production') tweetNewJob(tempFeedID,article);
       } else if (jobExist === 'error') {
         console.error('job search errored: %s', article.title);
       }
@@ -78,8 +78,8 @@ function feedJob () {
     });
   };
 
-  var tweetNewJob = function (article){
-    var tweetStatus = 'On @' + feedID + ': ' + article.title,
+  var tweetNewJob = function (tempFeedID, article){
+    var tweetStatus = 'On @' + tempFeedID + ': ' + article.title,
         tweetURL = article.link,
         fullTweet;
     tweetStatus = tweetStatus.substring(0, 115);
