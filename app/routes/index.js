@@ -6,8 +6,10 @@ exports.index = function(req, res){
   Job.getLatestJobs(function(err, jobs){
 
     //take the jobs and present them for the view
-    var sanitizedJobs = [];
-    for (var i = jobs.length - 1; i >= 0; i--) {
+    var sanitizedJobs = [],
+        jobsLength = jobs.length;
+
+    for (var i = 0; i < jobsLength; i++) {
       sanitizedJobs.push({
         'source': jobs[i].feedName,
         'title': jobs[i].title,
@@ -16,6 +18,7 @@ exports.index = function(req, res){
         'month': new moment.utc(jobs[i].createdAt).format("MMMM")
       });
     }
+
     // render the page with lovely new jobs
     res.render('index', {
       title: 'Front-end Development Jobs',

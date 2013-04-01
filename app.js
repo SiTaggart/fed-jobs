@@ -14,7 +14,7 @@ var feeds = new FeedsController();
 
 var job = new cronJob({
   // cronTime: ,
-  cronTime: (process.env.NODE_ENV !== 'production') ? '10 * * * *' : '0 * * * *',
+  cronTime: (process.env.NODE_ENV !== 'production') ? '* * * * *' : '0 * * * *',
   onTick: function() {
     console.log('cron job ran');
     feeds.start();
