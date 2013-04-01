@@ -22,8 +22,8 @@ function feedJob () {
       savedJobs;
 
   this.getFeed = function( feedDetails, modifiedSince, callback ) {
-
-    reqObj.uri = feedDetails.url;
+    var randomnumberhack = Math.floor(Math.random() * 1000);//just in case cache
+    reqObj.uri = feedDetails.url + '#' + randomnumberhack;
     feedID = feedDetails.feed_id;
     feedName = feedDetails.feed_name;
     savedJobs = 0;
