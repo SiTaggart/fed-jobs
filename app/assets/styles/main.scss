@@ -1,7 +1,8 @@
-body {
-  font: 26px 'Gill Sans', Arial, sans-serif;
-}
+@import 'config';
+@import '../../../public/libs/css/normalize-scss/_normalize';
 
-a {
-  color: #00B7FF;
-}
+* { @include box-sizing(border-box); }
+@import 'layout';
+@import 'typography';
+@import 'jobs';
+

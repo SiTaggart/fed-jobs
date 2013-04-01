@@ -1,12 +1,22 @@
 extends layout
 
 block content
-  h1 Front-end Development Jobs
-  ul
-  each job, i in jobs
-    li
-      span.feed #{job.feedName}
-      h2
-        a(href=job.url) #{job.title}
-      | (#{job.createdAt})
+  |<a href="https://github.com/SiTaggart/fed-jobs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+  div.container
+    aside(role="complementary")
+      h1
+        |<abbr title="Front-end Development">FED</abbr> Jobs
+      p
+        |Inspired by <a href="http://www.dsgnjbs.com/" target="_blank">DSGN JBS</a>, FED Jobs aims to bring together some of the best Front-end Development jobs available from a multitude of leading job boards.
+      |<a href="https://twitter.com/fed_jobs" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @fed_jobs</a>
+    section(role="main")
+      ul.jobs-list
+        each job, i in jobs
+          li.job
+            a(href=job.url)
+              time.job-posted
+                span.month #{job.month}
+                span.date #{job.date}
+              p.job-source #{job.source}
+              h2.job-title #{job.title}
 

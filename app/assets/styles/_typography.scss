@@ -1,0 +1,23 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,900);
+
+html, body {
+  height:100%;
+}
+
+body {
+  color: $base-color;
+  font: $base-font-size $base-font-family;
+  line-height: $base-line-height
+}
+
+h1, h2, h3, h4, h5, strong b {
+  font-weight: $font-weight-bold;
+}
+
+h1 {
+  font-size:3em;
+}
+
+a {
+  color: $action;
+}

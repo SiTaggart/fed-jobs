@@ -81,7 +81,7 @@ module.exports = function( grunt ) {
     watch: {
       compass: {
         files: [
-          'app/assets/styles/**/*.{scss,sass}'
+          'app/assets/styles/*.{scss,sass}'
         ],
         tasks: ['compass']
       },

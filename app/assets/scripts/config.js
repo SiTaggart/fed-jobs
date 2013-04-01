@@ -10,7 +10,7 @@ require.config({
     plugins: "plugins",
 
     // Libraries.
-    jquery: "../../../public/libs/js/jquery/jquery.min",
+    jquery: "../../../public/libs/js/jquery/jquery",
     lodash: "../../../public/libs/js/lodash/lodash.min",
     backbone: "../../../public/libs/js/backbone/backbone-min"
   },
