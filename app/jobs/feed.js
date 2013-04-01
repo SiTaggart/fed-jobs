@@ -1,5 +1,4 @@
 var appConfig = require('../../config'),
-    localConfig = require('../../config_local'),
     request = require('request'),
     Twit = require('twit'),
     moment = require('moment'),
@@ -9,10 +8,10 @@ var appConfig = require('../../config'),
     Job = require('../../app/models/job');
 
 var T = new Twit({
-  consumer_key:         (process.env.consumer_key || localConfig.Twitter.consumer_key),
-  consumer_secret:      (process.env.consumer_secret || localConfig.Twitter.consumer_secret),
-  access_token:         (process.env.access_token || localConfig.Twitter.access_token),
-  access_token_secret:  (process.env.access_token_secret || localConfig.Twitter.access_token_secret)
+  consumer_key:         (process.env.consumer_key || appConfig.Twitter.consumer_key),
+  consumer_secret:      (process.env.consumer_secret || appConfig.Twitter.consumer_secret),
+  access_token:         (process.env.access_token || appConfig.Twitter.access_token),
+  access_token_secret:  (process.env.access_token_secret || appConfig.Twitter.access_token_secret)
 });
 
 function feedJob () {
