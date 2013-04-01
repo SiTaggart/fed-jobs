@@ -1,7 +1,4 @@
-var mongoURI =
-    process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL ||
-    'mongodb://localhost/fed-jobs';
+var mongoURI = ( process.env.MONGOHQ_URL || 'mongodb://localhost/fed-jobs');
 
 module.exports = {
   environment: (process.env.NODE_ENV !== 'production') ? 'development' : 'production',
