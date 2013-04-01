@@ -4,10 +4,7 @@ module.exports = {
   environment: (process.env.NODE_ENV !== 'production') ? 'development' : 'production',
   port: (process.env.PORT || 3000),
   uri: (process.env.VCAP_APP_HOST || 'localhost'),
-  mongodb: mongoURI
-};
-
-module.exports = {
+  mongodb: mongoURI,
   Twitter: {
     consumer_key: 'eYQuNth3ToMYAF2EjH9dA',
     consumer_secret: 'vF25YTfEaWAoOEtmflZgjrerpFlZNdpA0s6z8Nae0',
