@@ -43,7 +43,7 @@ FeedsController.prototype.readTheQueue = function (){
 
   if(this.currentQueueIndex === this.numberOfFeeds) {
     console.log('kill queue');
-    exit();
+    return;
   }
 
   this.feedJob.getFeed( this.feedJobsQueue[i], this.modifiedSince, function(){
