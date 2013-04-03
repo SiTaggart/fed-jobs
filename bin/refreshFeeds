@@ -6,7 +6,7 @@ var appConfig = require('../config'),
 // Connect to data
 mongoose.connect(appConfig.mongodb);
 
-var feedJob = require('../../app/jobs/feed');
+var feedJob = require('../app/jobs/feed');
 
 function FeedsController () {
 
