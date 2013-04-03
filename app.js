@@ -1,26 +1,12 @@
 var express = require('express'),
     appConfig = require('./config'),
-    cronJob = require('cron').CronJob,
     routes = require('./app/routes'),
     http = require('http'),
     path = require('path'),
-    mongoose = require('mongoose'),
-    FeedsController = require('./app/controllers/feeds');
+    mongoose = require('mongoose');
 
 // Connect to data
 mongoose.connect(appConfig.mongodb);
-
-var feeds = new FeedsController();
-
-var job = new cronJob({
-  // cronTime: ,
-  cronTime: (process.env.NODE_ENV !== 'production') ? '* * * * *' : '0 * * * *',
-  onTick: function() {
-    console.log('cron job ran');
-    feeds.start();
-  },
-  start: true
-});
 
 var app = express();
 
