@@ -21,7 +21,7 @@ function FeedsController () {
 FeedsController.prototype.start = function (){
 
   this.currentQueueIndex = 0;
-  this.feeds = require('../../feeds').feeds;
+  this.feeds = require('../feeds').feeds;
   this.numberOfFeeds = this.feeds.length;
   this.modifiedSince = new Date().toString();
 
