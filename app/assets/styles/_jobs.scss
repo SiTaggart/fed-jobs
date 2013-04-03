@@ -42,11 +42,28 @@
         line-height:1.7;
       }
     }
-    .job-source {
-      margin:0;
-      padding-left:135px;
-    }
+    .job-source,
     .job-title {
       margin:0;
       padding-left:135px;
     }
+
+
+@media (max-width: 760px) {
+  .jobs-list {
+    font-size:0.8em;
+  }
+    .job-posted {
+
+      span {
+        width:75px;
+      }
+
+    }
+
+    .job-source,
+    .job-title {
+      padding-left:95px;
+    }
+
+}

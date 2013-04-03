@@ -1,0 +1,30 @@
+@import 'config';
+
+/*----------------------------------------------------------------------------------------------------------
+#############################################  ASIDE CONTENT
+----------------------------------------------------------------------------------------------------------*/
+aside[role="complementary"] {
+
+}
+
+@media (max-width: 760px) {
+  aside[role="complementary"] {
+    font-size:60%;
+
+    h1 {
+      float:left;
+      margin:0.46em 0;
+    }
+
+    p
+    {
+      display:none;
+    }
+
+  }
+
+  .twitter-follow-button {
+    float:right;
+    margin:2.2em 0;
+  }
+}
