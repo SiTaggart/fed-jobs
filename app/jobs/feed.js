@@ -52,7 +52,7 @@ function feedJob () {
         title = article.title;
 
     //attempt to weed out some of the crappier jobs as searches are pretty crappy and loose. Shameful regex.
-    if(title.match(/front end|front-end|UI|Interface|frontend|user interface/gi) === null) return;
+    if(title.match(/front end|front-end|UI|client side|ember.js|backbone.js|javascript|Interface|frontend|user interface/gi) === null) return;
 
     Job.CheckIfExistsByURL(article.link, function(jobExist){
 

@@ -1,27 +1,9 @@
-#Node Quick Start
-A quick start app structure I can use to get a node site up and running. Inspired by Yeoman and Mimosa and the like, but less cruft.
+#FED-JOBS
+OK, so I've been trying to think of a little project to do to play with node.js and when I saw [DSGN JBS](http://www.dsgnjbs.com/), I thought it was a perfect opportunity. It is a brilliant idea, and I thought something similar for Front-end Development would be useful.
 
-##Built with
-Express and Jade templating. Bower for ui Package management. Grunt task to build SASS files and lint js files, concat using require, minify etc.
+Of course the [making of Dsgn jbs](http://tomcavill.com/blog/building-dsgn-jbs/), shows it was brilliantly simple in it's conception but I wanted to make it harder for myself. So out came node, a web site and worker to collect new jobs, Heroku for hosting and a [Twitter account](https://twitter.com/fed_jobs) later, and hey presto!
 
-##Run with
-`$ node app`
+##Why completely open source
+Well I'm hoping that in true Internet troll fashion, someone would take great offence to my terrible efforts at building a website for the first time in node, or wish to add more feeds for more awesome jobs and issue a pull request.
 
-I use LiveReload anyway so keep that seperate.
-
-##Usage
-Make sure you have node, npm, grunt and bower installed globally.
-
-Clone the repo and run the following before you run the app server. This will install everything an get latest dependancies:
-
-`$ npm install`
-
-`$ grunt setapp`
-
-##Production
-To ensure your website is fully awesome, run the production task in grunt to minify everything
-
-`$ grunt production`
-
-###TODO
-- Image compression in production
+So if you are a small, petty minded Internet troll, don't be a dick bag about it and moan on the Internet, issue a Pull Request and maybe you'll add some value to the world and someone will learn something...
