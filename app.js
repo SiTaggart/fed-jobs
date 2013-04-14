@@ -2,6 +2,7 @@ var express = require('express'),
     appConfig = require('./config'),
     routes = require('./app/routes'),
     http = require('http'),
+    gzippo = require('gzippo'),
     path = require('path'),
     mongoose = require('mongoose');
 
@@ -35,6 +36,7 @@ app.configure('development', function(){
 
 app.configure('production', function(){
   app.use(express.errorHandler());
+  app.use(gzippo.staticGzip(__dirname + '/public'));
 });
 
 app.get('/', routes.index);

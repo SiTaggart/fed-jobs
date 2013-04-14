@@ -14,7 +14,8 @@
     "request": "~2.16.2",
     "lodash": "~1.0.1",
     "cron": "~1.0.1",
-    "analytics-node": "~0.3.0"
+    "analytics-node": "~0.3.0",
+    "gzippo": "~0.2.0"
   },
   "devDependencies": {
     "grunt": "~0.4.0",
