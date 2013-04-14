@@ -13,15 +13,17 @@
     "moment": "~2.0.0",
     "request": "~2.16.2",
     "lodash": "~1.0.1",
-    "cron": "~1.0.1",
-    "analytics-node": "~0.3.0",
-    "gzippo": "~0.2.0"
+    "gzippo": "~0.2.0",
+    "rendr": "~0.2.2"
   },
   "devDependencies": {
-    "grunt": "~0.4.0",
+    "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.1.0",
     "grunt-contrib-compass": "~0.1.0",
-    "grunt-contrib-watch": "~0.1.4",
+    "grunt-contrib-handlebars": "git://github.com/spikebrehm/grunt-contrib-handlebars#d61e7457c6551965f88de46ad207fd67d18ddd4a",
+    "grunt-rendr-stitch": "~0.0.2",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-bg-shell": "~2.0.1",
     "grunt-bower-task": "~0.1.0",
     "grunt-contrib-requirejs": "~0.3.4",
     "grunt-contrib-uglify": "~0.1.0",
