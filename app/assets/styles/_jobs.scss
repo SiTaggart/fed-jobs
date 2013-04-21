@@ -9,10 +9,30 @@
   padding: 0;
 }
   .job {
-    border-bottom:1px solid #e3e3e3;
+    border-top:1px solid #ddd;
+    @include box-shadow(inset 3px 3px 8px rgba(0,0,0,0.1));
+    min-height: 140px;
+    text-shadow: 1px 2px 2px rgba(255,255,255,0.8);
+    @include transition(background 300ms);
+
+    &:nth-child(3n+1) {
+      background:#fefefe;
+    }
+    &:nth-child(3n+2) {
+      background:#f9f9f9;
+    }
+    &:nth-child(3n+3) {
+      background:#efefef;
+    }
+
+    &:hover {
+      background: #e5e5e5;
+      @include box-shadow(inset 0px 0px 12px rgba(0,0,0,0.3));
+    }
 
     a {
       @include pie-clearfix();
+      color:#333;
       display:block;
       padding:30px 40px;
       text-decoration: none;
@@ -20,32 +40,32 @@
 
   }
     .job-posted {
-      background:#efefef;
+      background:rgba(0,0,0,0.1);
       display:block;
-      float:left;
+      float:right;
 
       span {
-        display: block;
-        padding: 0 10px;
+        padding: 0 10px 0 0;
         text-align: center;
         width:105px;
       }
 
       .month {
-        border-bottom:1px solid #fff;
         line-height:2;
+        padding-left: 10px
       }
 
       .date {
-        font-size:em-font(40px);
         font-weight: $font-weight-bold;
-        line-height:1.7;
       }
     }
     .job-source,
     .job-title {
       margin:0;
-      padding-left:135px;
+    }
+    .job-title {
+      font-size:2em;
+      line-height: 1.25
     }
 
 
@@ -59,11 +79,6 @@
         width:75px;
       }
 
-    }
-
-    .job-source,
-    .job-title {
-      padding-left:95px;
     }
 
 }
